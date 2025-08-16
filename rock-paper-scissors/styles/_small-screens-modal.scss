@@ -1,0 +1,24 @@
+.modal-dialog, .modal-content {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;   
+    margin: 0; 
+    border-radius: 0;  
+    border: none;  
+}
+
+.close-modal-mobile {
+    display: block; 
+}
+
+.close-modal-desktop {
+    display: none;  
+} 
+
+.rules-heading {
+    margin: auto;    
+}
+
+
+
+

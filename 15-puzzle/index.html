@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 puzzle</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>15 puzzle</h1> 
+        <p class="instructions">shuffle the tiles and try to put them back in the right order with as few moves as possible!</p> 
+    </header>
+
+    <main>
+        <div class="stats">
+            <p class="moves-p accent">moves: <span id="moves">0</span></p>
+            <p class="time-p accent">time: <span id="time">0:0:0</span></p>       
+        </div>
+    
+    <div id="board"></div>
+
+    <button id="shuffle-btn">shuffle</button>    
+
+    <div class="win-modal hide">
+        <p>congrats!</p>
+        <p>you won in <span class="accent modal-moves"></span> moves and <span class="accent modal-time"></span>!</p>
+        <button class="reset">play again</button> 
+    </div>
+    </main>
+</body>
+</html>

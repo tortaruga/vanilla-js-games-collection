@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./app.js"></script>
+</head>
+<body>
+
+  <main>
+
+    <button id="audio-btn" class="playing" aria-label="toggle background music"></button> 
+
+    <div class="intro"> 
+      <h1 class="main-heading heading">snake</h1> 
+
+      <p class="main-info">Use the arrow keys or click the buttons to eat the apples and grow, but careful not to bump into the walls (or your tail!)</p>
+      <p>How high can you score?</p>
+
+      <img class="intro-img" src="./images/snake.png" alt="cute snake illustration">
+      
+      <button id="play-btn">play</button>
+    </div>
+
+    <div class="game-container hide">
+
+      <h1 class="small-heading heading">snake</h1> 
+
+      <div class="container">
+        <div class="column">
+          <div class="header">
+          <p class="score">score: </p>
+          <p class="instruction small-screen"><img src="./images/snake-tongue.png" alt="cute snake illustration"> use your keyboard or hit the buttons to guide the snake to the apples!</p>
+        </div>
+
+          <div class="gameboard"></div>
+        </div>
+      
+        <div class="column two">
+          <p class="instruction big-screen"><img src="./images/snake-tongue.png" alt="cute snake illustration"> use your keyboard or hit the buttons to guide the snake to the apples!</p>
+          
+          <div class="phone-controls">
+            <button class="up" aria-label="button up"><img src="./images/arrow-up.svg" alt="arrow up"></button>
+            <button class="left" aria-label="button left"><img src="./images/arrow-left.svg" alt="arrow left"></button>
+            <button class="right" aria-label="button right"><img src="./images/arrow-right.svg" alt="arrow right"></button>
+            <button class="down" aria-label="button down"><img src="./images/arrow-down.svg" alt="arrow down"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="backdrop hide"></div>
+  <div class="popup hide">
+    <p>You scored <span id="final-result"></span> points!</p>
+    <img src="./images/snake-branch.png" alt="cute snake wrapped around a branch">
+    <p>Think you can do better?</p>
+    <button class="replay-btn">Play again!</button>  
+  </div>
+
+  <footer>all the icons are from <a href="https://www.svgrepo.com/" target="_blank">SVGrepo</a>. illustrations by <a href="https://www.freepik.com/author/upklyak" target="_blank">upklyak</a> on freepik. background music by <a href="https://freesound.org/people/AudioCoffee/" target="_blank">AudioCoffee</a> on freesound. game over sound effect by
+    <a href="https://pixabay.com/users/freesound_community-46691455/" target="_blank">freesound_community</a> on pixabay
+  </footer>
+         
+</body>
+</html>

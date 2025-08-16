@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tilt+Warp:XROT@-27&display=swap");
+
+:root {
+  --cream: #ffff79;
+  --sand: #f9e572;
+  --green: #6cad2d; 
+  --pale-green: #bbf27e;
+  --medium-green: #6cad2c;
+  --dark-green: #417300;
+  --brown: #b87527;
+  --light-brown: #d7a121;
+  --dark-brown: #964911;
+  --red: #ea6056;
+  --dark-red: #a3162b;
+  --pale-red: #fcc2b6;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+body {
+  background: var(--sand);
+  margin: 0;
+  background-color: #ffefae; 
+  color: var(--dark-green);
+  font-family: "Press Start 2P", sans-serif;
+  padding: 1rem;
+} 
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  font-size: inherit;
+}
+
+#audio-btn {
+  width: 2rem;
+  aspect-ratio: 1;
+  background-color: var(--sand); 
+  border-radius: 50%;
+  background-position: center; 
+  background-size: 60%;  
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 1rem;
+  z-index: 1;
+  left: 1rem;
+}
+
+#audio-btn.playing {
+  background-image: url(./images/audioPaused.svg);
+}
+
+#audio-btn.paused {
+  background-image: url(./images/audioPlaying.svg);
+}
+
+.hide {
+  display: none;
+}
+
+
+/* intro */
+main {
+  max-width: 1500px;
+  margin: auto;
+  min-height: 70vh;
+}
+
+.intro {
+  text-align: center;
+}
+
+.heading {
+  color: var(--green);
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 4px 0 0 var(--light-brown), -2px 0px var(--red); 
+}
+
+.main-info {
+  max-width: 700px;
+  margin: 3rem auto;
+  font-size: 1rem;
+  color: var(--medium-green);
+}
+
+.intro-img {
+  width: 60%;
+  max-width: 15rem;
+}
+
+#play-btn, .replay-btn {
+  background-color: var(--red);
+  color: var(--cream);
+  padding: .5rem 1rem;
+  width: max-content;
+  margin: auto;
+  box-shadow: .3rem .2rem var(--dark-red);
+  transition: .3s;
+  display: block;
+}
+ 
+#play-btn:hover, .replay-btn:hover {
+  box-shadow:  0 0 var(--dark-red);
+  background-color: var(--dark-red);
+  color: var(--sand);
+}
+
+/* game */
+
+.small-heading {
+  font-size: 2rem;
+}
+
+.gameboard {
+  width: 300px;
+  height: 300px; 
+  margin: 1rem auto 2rem; 
+  display:flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  border: 3px solid var(--light-brown);
+  border-radius: 1rem;
+  box-shadow: .4rem .3rem var(--dark-brown);
+  overflow: hidden;
+  background-color: #fff199;
+  padding: .2rem;
+}
+  
+.gameboard div {
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+}
+  
+
+.snake {
+  background: var(--green);
+}
+  
+.apple {
+  border-radius: 6px 6px 7px 7px;
+}
+  
+.apple.green  {
+  background-color: var(--medium-green);
+}
+
+.apple.dark-green  {
+  background-color: var(--dark-green);
+}
+
+
+.apple.red  {
+  background-color: var(--red);
+}
+
+.apple.dark-red  {
+  background-color: var(--dark-red);
+}
+
+.apple.brown  {
+  background-color: var(--brown);
+}
+
+.score {
+  margin: 3rem auto;
+  max-width: 900px; 
+  text-align: center;
+}
+
+.instruction {
+  font-size: .8rem;
+  color: var(--green);
+  text-align: center;
+  max-width: 30rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  background-color: var(--pale-red);
+  padding: .5rem;
+  box-shadow: .3rem .2rem var(--dark-red); 
+  margin-block-end: 2rem;
+  color: var(--dark-brown);  
+}
+
+.instruction img {
+  width: 5rem;
+}
+
+.phone-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 3rem);
+  grid-template-rows: repeat(4, 1.5rem);
+  width: 9rem;
+  margin-inline: auto;
+  gap: .15rem;
+}  
+
+.phone-controls button {
+  width: 3rem;
+  border: 2px solid var(--dark-red);
+  border-radius: 1rem;
+  padding: .5rem;
+  grid-row: span 2;
+  background-color: var(--red);
+  box-shadow: .1rem .1rem var(--dark-brown);
+  transition: .2s;
+}
+
+.phone-controls button:hover {
+  box-shadow: 0 0 var(--dark-brown);
+}
+
+.up {
+  grid-column: 2 / 3;
+}
+
+.left {
+  grid-column: 1/ 2;
+} 
+
+.right {
+  grid-column: 3 / 4;
+}
+
+.down {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3; 
+}
+  
+.popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background-color: var(--pale-green);
+  color: var(--brown);
+  max-width: 30rem;
+  padding: 1rem;
+  border: 3px solid var(--dark-green);
+  box-shadow: .4rem .3rem var(--dark-green);
+  text-align: center;
+}
+
+.popup img {
+  width: 15rem;
+  margin-block: 1rem; 
+  background-color: #ffefae;
+  border-radius: 1rem;
+}
+
+#final-result {
+  color: var(--dark-green);
+}
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+.instruction.big-screen {
+  display: none;
+}
+
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000030;
+  width: 100%;
+  height: 100%;
+
+}
+
+footer {
+  font-family: sans-serif;
+  font-size: .8rem;
+  text-align: center;
+  margin: 4rem auto auto;  
+  max-width: 500px;
+}
+
+a {
+  color: var(--dark-red);
+}
+
+a:hover {
+  color: var(--red);
+}
+
+/* media queries */
+@media screen and (min-width: 620px) {
+  .header p {
+    width: 50%;
+    max-width: unset;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    display: flex;
+  }
+
+  .column {
+    width: 50%;
+  }
+  
+  .gameboard {
+    width: 600px;
+    height: 400px;
+  }
+
+  .gameboard div {
+    width: 30px;
+    height: 20px;
+  }
+
+  .instruction.small-screen {
+    display: none;
+  }
+
+  .instruction.big-screen {
+    display: flex;
+  }
+  
+  .instruction img {
+    width: 7rem;
+  }
+
+  .header {
+    display: block;
+  }
+
+  .header p {
+    width: unset;
+  }
+}

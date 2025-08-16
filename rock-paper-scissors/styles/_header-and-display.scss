@@ -1,0 +1,33 @@
+
+// header
+.game-header {
+    border: .2rem solid $header-border-color;    
+    max-width: px-to-rem(800, );
+    width: 100%; 
+    margin: auto;
+}
+
+.score-tag {
+    color: $score-text; 
+    margin: 0; 
+    font-weight: 700;
+    letter-spacing: .05rem;                 
+}
+
+.score {
+    font-size: 3rem; 
+    margin-block: -.7rem -.2rem;   
+    font-weight: 700;
+    color: $text-dark; 
+    animation: animateScore 1s forwards;
+} 
+
+// display
+.game-display {
+    margin-block: 7rem 10rem; 
+    width: 100%;
+} 
+
+.game-display__img {
+    width: 14rem;      
+}

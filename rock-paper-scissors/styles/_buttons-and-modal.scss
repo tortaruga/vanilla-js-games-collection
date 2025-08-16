@@ -1,0 +1,41 @@
+// buttons
+.btns-container {
+    flex-direction: column; 
+}
+
+.rules-btn {
+    color: white;
+    background-color: transparent; 
+    &:hover {
+        background-color: $header-border-color ;
+    } 
+}
+
+.game-version-btn {
+    background-color: transparent; 
+    border: none;
+    color: white;      
+    font-weight: 400; 
+    font-size: .9rem; 
+    &:hover {
+        color: $header-border-color;
+    }
+}
+
+.play-again-btn {
+    background-color: white;
+
+    &:hover {
+        color: hsl(349, 71%, 52%);  
+    } 
+}
+ 
+// rules modal
+.modal-dialog {
+    aspect-ratio: 1;
+    max-width: px-to-rem(400, );  
+}
+
+.close-modal-mobile {
+    display: none; 
+}

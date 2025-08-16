@@ -1,0 +1,82 @@
+@use 'sass:math';
+
+@import 'variables.scss';
+@import 'header-and-display';
+@import 'options-borders-and-icons';
+@import 'animations';
+@import 'buttons-and-modal'; 
+ 
+@function px-to-rem($px, $base: 16) {
+    @return math.div($px, $base) * 1rem;
+}
+
+// general
+body {
+    background: $bg no-repeat;
+    background-size: cover; 
+    font-family: 'barlow semi condensed', sans-serif;  
+    font-weight: 600; 
+    letter-spacing: .2rem;   
+}
+
+main {
+    max-width: 100vw;  
+    min-height: 100vh; 
+}
+
+button {
+    font-family: inherit; 
+    font-weight: 600; 
+    letter-spacing: .2rem; 
+    font-size: 1.2rem;       
+}
+
+h1 {
+    font-weight: 700; 
+    span {
+        margin: -.3rem .5rem;       
+    }
+}
+ 
+.hide {
+    display: none;
+}
+
+.visually-hidden { 
+    position: absolute; 
+    width: 1px; height: 
+    1px; padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip: rect(0, 0, 0, 0); 
+    white-space: nowrap;
+    border: 0; 
+}
+ 
+// general styling for steps 2, 3 and 4
+.user-choice-container, .computer-choice-container {
+    flex-basis: px-to-rem(140, );   
+} 
+
+.empty-slot {
+    border-radius: 50%;
+    width: 8rem;   
+    aspect-ratio: 1;
+    background-color: rgba(0, 0, 0, 0.1);  
+} 
+
+.winner {  
+    animation: winnerEffect .2s forwards;    
+}  
+
+.verdict { 
+    font-size: calc(2.6rem + 1vw); 
+}
+
+@media screen and (max-width: px-to-rem(576, )) {
+    @import 'small-screens-modal';
+}
+
+@media screen and (min-width: px-to-rem(992, )) {
+    @import 'desktop-design';
+}

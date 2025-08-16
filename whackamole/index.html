@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-mole</title>
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+</head> 
+<body>
+  <main>
+    <button id="audio-btn" class="playing" aria-label="play / pause background music"></button>
+    <div class="intro">
+      <h1>Whack-a-mole</h1>
+      <p>Catch that mole! Can you be fast enough?</p>
+
+      <img class="intro-img" src="./images/mole.png" alt="illustration of a mole">
+      
+      <button id="start">start</button>
+    </div>
+
+    <div class="game hide">
+      <h2>Whack-a-mole</h2>
+
+      <div class="header">
+        <p>Score: <span id="score">0</span></p>
+        <p>Time left: <span id ="timer">30</span>s</p>
+      </div>
+
+      <div class="grid"> 
+        <div class="square" id="0"></div>
+        <div class="square" id="1"></div>
+        <div class="square" id="2"></div>
+        <div class="square" id="3"></div>
+        <div class="square" id="4"></div>
+        <div class="square" id="5"></div>
+        <div class="square" id="6"></div>
+        <div class="square" id="7"></div>
+        <div class="square" id="8"></div>
+      </div>
+
+      <button id="play-pause-btn">play</button>
+    </div>
+
+    <div class="backdrop hide"></div>
+    <div class="game-over hide">
+      <h2>Game over!</h2>
+      <p>Your score is <span id="results-score"></span></p>
+      <img src="./images/mole-pickaxe.png" alt="illustration of a mole with a pickaxe">
+      <button id="play-again">Try again!</button>
+    </div>
+  </main>
+  
+  <footer>
+    icons by <a href="https://www.svgrepo.com/" target="_blank">SVGRepo</a>. illustrations by <a href="https://www.freepik.com/author/freepik" target="_blank">freepik</a>.
+    background music by <a href="https://freesound.org/people/AudioCoffee/" target="_blank">AudioCoffee</a> on freesound. game over sound effect by
+    <a href="https://pixabay.com/users/freesound_community-46691455/" target="_blank">freesound_community</a> on pixabay
+  </footer>
+      
+</body>
+</html>

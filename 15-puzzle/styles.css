@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --dark: #3a3a3a;
+    --white: #fffff3;
+    --neon-green: #dbfb3e;
+    --lavender: #c5c6fe;
+    --pink: #ffadde;
+    --sky-blue: #8aebe8;
+    --orange: #f9ca8d;
+    --yellow: #ffe28b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: poppins, sans-serif;
+    background: var(--white);
+    letter-spacing: .1rem; 
+    color: var(--dark);
+}
+
+main {
+    padding: 0rem 1rem 4rem;   
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px; 
+    margin: auto; 
+    padding: 2rem 1rem; 
+    text-align: center; 
+}
+
+h1 {
+   margin: 0;   
+   color: var(--lavender);
+}
+
+button {
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    padding: .3rem 1.2rem;
+    border: 2px solid transparent;  
+    font-family: poppins, sans-serif;
+    cursor: pointer; 
+    color: var(--dark);
+    background-color: var(--yellow);
+}
+
+button:hover {
+    background: var(--orange); 
+}
+
+#shuffle-btn {
+    display: block;
+    margin: 3rem auto;
+}
+
+.accent {    
+    font-weight: 600;
+}
+
+.accent span {
+    font-size: 1.2rem; 
+    color: var(--pink);
+}
+
+.stats {
+    max-width: 400px;  
+    margin: auto;
+    display: flex; 
+    justify-content: space-between; 
+    padding: 1rem;
+    color: #3a3a3a; 
+}
+
+#board {
+    margin: auto; 
+    position: relative;
+    height: 220px;
+    width: 220px; 
+} 
+
+.tile {
+    width: 50px;
+    position: absolute;
+    --color: var(--lavender);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer; 
+    background-color: var(--color); 
+    border-radius: .5rem; 
+    transition: .3s; 
+    color: var(--dark);
+    z-index: 1;
+}
+
+.empty {
+    background-color: var(--dark); 
+    z-index: 0;
+}
+
+.win-modal {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem; 
+    border-radius: .5rem; 
+    opacity: 1;
+    background-color: var(--lavender);    
+    min-width: 250px; 
+    text-align: center;
+    color: var(--dark);
+    z-index: 1;
+    box-shadow: 0 0 5px #3a3a3a25;
+}
+
+.hide {
+    display: none;
+}
+
+.animation {
+    animation: modal-animation .8s forwards;
+}
+
+@keyframes modal-animation {
+    to {
+       top: 50%;
+      opacity: 1;
+    }
+}

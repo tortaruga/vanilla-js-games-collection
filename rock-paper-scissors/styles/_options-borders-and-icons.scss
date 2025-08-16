@@ -1,0 +1,104 @@
+// option button borders
+.btn-border {
+    background: var(--color); 
+    width: 8rem;    
+    aspect-ratio: 1;
+    border-radius: 100%;  
+    position: absolute;
+    left: calc(50% - 9.5rem);              
+    top: 0%;
+    box-shadow: inset 0 -.25rem hsla(240, 5%, 4%, 0.437);   
+    transition: .3s; 
+    transform-origin: center;
+    animation: choiceAnimation .7s ease-in-out forwards;
+
+    &:hover {
+    box-shadow: inset 0 0rem hsla(240, 5%, 4%, 0.437);  
+    }
+} 
+
+.border-scissors {
+    --color: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%)); 
+    left: calc(50% + 1.5rem);     
+}
+
+.border-rock {
+    --color: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));   
+    left: calc(50% - 3.5rem);        
+    top: 50%;    
+}
+
+.border-paper {
+    --color: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+// option borders for bonus version
+.step-1-bonus > .btn-border {
+    width: 6rem;  
+} 
+
+.border-scissors-2 {
+    left: calc(50% - 3rem);  
+}
+
+.border-paper-2 {
+    left: calc(50% + 3.5rem);  
+    top: 25%;  
+}
+
+.border-rock-2 {
+    left: calc(50% + 1rem);
+    top: 65%; 
+}
+ 
+.border-lizard {
+    --color: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    left: calc(50% - 6.5rem);         
+    top: 65%;      
+}
+
+.border-spock {
+    --color: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    top: 25%;      
+    left: calc(50% - 9.5rem);        
+}
+
+// option button icons
+.paper-btn {
+    --icon: url('../images/icon-paper.svg'); 
+    aspect-ratio: 1; 
+    border-radius: 50%; 
+    width: 75%;          
+    background: var(--icon) no-repeat white; 
+    background-position: center;
+    background-size: 40%;            
+    border: none;  
+    z-index: 1; 
+    box-shadow: inset 0 0em hsl(223, 19%, 86%);   
+    transition: .3s; 
+
+    &:hover {   
+    box-shadow: inset 0 .3em hsl(223, 19%, 86%);
+    }
+}   
+
+.scissors-btn {      
+    --icon: url('../images/icon-scissors.svg');
+    @extend .paper-btn;
+}
+
+.rock-btn {
+    --icon: url('../images/icon-rock.svg');  
+    @extend .paper-btn; 
+    
+}
+
+.lizard-btn {
+    --icon: url('../images/icon-lizard.svg');
+    @extend .paper-btn; 
+}
+
+.spock-btn {
+    --icon: url('../images/icon-spock.svg'); 
+    @extend .paper-btn; 
+}
